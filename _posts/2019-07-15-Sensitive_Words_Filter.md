@@ -30,7 +30,7 @@ for(int i; i < wordList.size(); i++ ) {
 return false; // NOT contains sensitive word
 ```
 
-## 直觉解法复杂度
+### 直觉解法复杂度
 
 longText.contains(word) 的实现，实际上是暴力解法，  
 也就是说，会从位置 0 到位置 longText.length - word.length 开始，比较每一个字符是否相等  
@@ -67,7 +67,7 @@ O(wordList.size()) * O(longText.length) * O(word.length)
 
 如果将 contains 更换为 KMP 算法的话，实际上这里的效率是会有所提高的。  
 
-## 直觉解法评估
+### 直觉解法评估
 wordList 占用内存空间大；  
 算法复杂度高；  
 
@@ -78,12 +78,12 @@ wordList 占用内存空间大；
 以图片展示，下图是存了 8个键的前缀树："A", "to", "tea", "ted", "ten", "i", "in", 和 "inn"  
 ![alt text](https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/Trie_example.svg/250px-Trie_example.svg.png "前缀树")
 
-##  前缀树算法复杂度
+###  前缀树算法复杂度
 前缀树算法需要从位置 0 到位置 longText.length - word.length 开始，比较每一个字符是否被包含于前缀树  
 如果被包含的时候，比较每一个字符是否被包含于子树；  
 复杂度为 O(longText.length) * O(word.length)
 
-## 前缀树算法评估
+### 前缀树算法评估
 占用内存空间小；  
 算法复杂度高；  
 
